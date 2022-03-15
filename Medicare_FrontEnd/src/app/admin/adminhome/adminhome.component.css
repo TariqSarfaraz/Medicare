@@ -1,0 +1,17 @@
+
+.relative {
+    position: relative;
+   
+  }
+  
+  .absolute {
+    position: absolute;
+    top: 80px;
+    margin-left: 400px;
+    width: auto;
+    height: auto;
+  }
+
+div button{
+    margin-left: 20px;
+}

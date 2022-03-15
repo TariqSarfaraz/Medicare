@@ -1,0 +1,31 @@
+<br /><br />
+<div class="container">
+   <br />
+   <button (click)="backtodashboard()" class="btn btn-primary" id="one">&lAarr;</button>
+   <button (click)="gotohome()" class="btn btn-danger" id="one" style="margin-left: 90%">LOGOUT</button>
+   <br />
+   <br />
+   <form>
+      <table class="table table-striped table-bordered">
+         <thead>
+            <tr>
+               <th>PRODUCT ID</th>
+               <th>PRODUCT NAME</th>
+               <th>PRODUCT PRICE</th>
+               <th>PRODUCT TYPE</th>
+               <th>ADD TO CART</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr *ngFor="let br of ProductList">
+               <td>{{ br.pid }}</td>
+               <td>{{ br.pname }}</td>
+               <td>{{ br.price | currency: 'INR' }}</td>
+               <td>{{ br.ptype }}</td>
+               <td><button (click)="addtomycart(br.pid, br.pname, br.price, br.ptype)" class="btn btn-warning">YES ADD TO CART</button></td>
+            </tr>
+         </tbody>
+         <br />
+      </table>
+   </form>
+</div>

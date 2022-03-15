@@ -1,0 +1,19 @@
+p{
+    font-size: xx-large;
+    text-align: center;
+    font-style: normal;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+div{ 
+    margin-left: 20%;
+}
+
+#two{
+    margin-right: 20px;
+    margin-left: 20px;
+}
+table{
+    text-align: center;
+    width: auto;
+    margin-left: 30%;
+}

@@ -1,0 +1,40 @@
+<br /><br />
+
+<div class="container">
+   <button (click)="backtodashboard()" class="btn btn-primary" id="one">&lAarr;</button>
+   <button (click)="gotohome()" class="btn btn-danger" id="one" style="margin-left: 90%">LOGOUT</button>
+   <br />
+   <br />
+   <p *ngIf="ProductList.length === 0" class="fs-1" style="text-align: center; font-size: xx-large; font-family: Verdana, Geneva, Tahoma, sans-serif">EMPTY</p>
+
+   <form *ngIf="ProductList.length > 0">
+      <table class="table table-striped table-bordered">
+         <thead>
+            <tr>
+               <th hidden>CART ID</th>
+               <th hidden>PRODUCT ID</th>
+               <th>PRODUCT NAME</th>
+               <th>PRODUCT PRICE</th>
+               <th>PRODUCT TYPE</th>
+               <th>DON'T WANT</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr *ngFor="let br of ProductList">
+               <td hidden>{{ br.id }}</td>
+               <td hidden>{{ br.pid }}</td>
+               <td>{{ br.pname }}</td>
+               <td>{{ br.price | currency: 'INR' }}</td>
+               <td>{{ br.ptype }}</td>
+               <td>
+                  <button type="button" class="btn btn-danger" (click)="OnClickDelProdct(br.id)">DELETE IT</button>
+               </td>
+            </tr>
+         </tbody>
+         <br />
+      </table>
+
+      <p class="sum">TOTAL PRICE : {{ sumList }}Rs</p>
+      <button class="middle" (click)="payment()" class="btn btn-outline-success" style="margin-left: 50%">YES ORDER</button>
+   </form>
+</div>

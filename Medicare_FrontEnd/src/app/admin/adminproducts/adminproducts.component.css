@@ -1,0 +1,15 @@
+table{
+    margin-left: 200px;
+    text-align: center;
+    width: auto;
+}
+
+.toggle
+{
+ font-size: 20px;
+}
+
+h1{
+     color: green;
+     font-size: 30px;
+ }

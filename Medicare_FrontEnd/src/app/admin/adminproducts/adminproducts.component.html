@@ -1,0 +1,45 @@
+<br /><br />
+<button (click)="adminhome()" class="btn btn-primary" id="one">BACK</button>
+<button (click)="gotohome()" class="btn btn-danger" style="margin-left: 90%">LOG OUT</button>
+
+<p></p>
+<form>
+   <table class="table table-striped table-bordered fs-5">
+      <thead>
+         <tr>
+            <th>PRODUCT ID</th>
+            <th>PRODUCT NAME</th>
+            <th>PRODUCT PRICE</th>
+            <th hidden>PRODUCT QUANTITY</th>
+            <th>PRODUCT CATEGORY</th>
+            <th>EDIT</th>
+            <th>DELETE</th>
+            <!-- <th colspan="2"> AVAILABILTY</th>  -->
+            <th>PRODUCT STATUS</th>
+            <th>AVAILABILTY</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor="let br of ProductList">
+            <td>{{ br.pid }}</td>
+            <td>{{ br.pname }}</td>
+            <td>{{ br.price }}</td>
+            <td hidden>{{ br.pqty }}</td>
+            <td>{{ br.ptype }}</td>
+
+            <td>
+               <button type="button" class="btn btn-warning" (click)="OnClickEdit(br.pid)">EDIT THIS</button>
+            </td>
+            <td>
+               <button type="button" class="btn btn-danger" (click)="OnClickDel(br.pid)">DELETE IT</button>
+            </td>
+            <td>{{ br.status }}</td>
+            <TD>
+               <BUtton (click)="testing(br.pid, br.status)" *ngIf="br.status == 'N'" class="btn btn-success">A</BUtton>
+               <BUtton (click)="testing(br.pid, br.status)" *ngIf="br.status == 'A'" class="btn btn-danger">N</BUtton>
+            </TD>
+         </tr>
+      </tbody>
+      <br />
+   </table>
+</form>

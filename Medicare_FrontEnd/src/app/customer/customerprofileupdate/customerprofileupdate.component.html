@@ -1,0 +1,19 @@
+<br /><br />
+<button (click)="backtodashboard()" class="btn btn-primary" id="one">&lAarr;</button>
+<button (click)="gotohome()" class="btn btn-danger" id="one" style="margin-left: 90%">LOGOUT</button>
+<form>
+   <div class="container">
+      <h1 class="fs-1 fw-bold">UPDATE PROFILE</h1>
+      <label for="email"><b>NAME </b></label>
+      <input type="text" placeholder="Enter Name" name="name" #up="ngModel" [(ngModel)]="customer.name" />
+      <br />
+      <br />
+      <label for="psw"><b>PASSWORD </b></label>
+      <input type="password" placeholder="Enter Password" name="password" #um="ngModel" [(ngModel)]="customer.password" />
+      <br />
+      <br />
+      <label for="psw"><b>MOBILE No </b></label>
+      <input type="text" placeholder="Enter Mobile number" name="moob" #un="ngModel" [(ngModel)]="customer.contact" />
+      <button type="submit" class="btn btn-success" (click)="UpdateProfile(customer)">SAVE</button>
+   </div>
+</form>

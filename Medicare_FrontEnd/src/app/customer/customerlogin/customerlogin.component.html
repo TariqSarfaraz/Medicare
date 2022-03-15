@@ -1,0 +1,25 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<form #regForm="ngForm" (ngSubmit)="login()" name="myForm">
+   <div class="container">
+      <h1 class="fs-4 fw-bold">LOGIN</h1>
+      <label for="email"><b>ID</b></label>
+      <input #name="ngModel" id="name" type="text" placeholder="Enter Id" name="name" #ue="ngModel" ng-model="myName" required [(ngModel)]="adminLogin.id" minlength="1" maxlength="3" />
+
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+         <div *ngIf="name.errors?.['required']">ID is required.</div>
+         <div *ngIf="name.errors?.['minlength']">ENTER ID.</div>
+      </div>
+
+      <label for="psw"><b>PASSWORD</b></label>
+      <input #password="ngModel" id="password" type="password" placeholder="Enter Password" name="password" #up="ngModel" required [(ngModel)]="adminLogin.password" minlength="5" />
+      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert">
+         <div *ngIf="password.errors?.['required']">Password is required.</div>
+         <div *ngIf="password.errors?.['minlength']">Password must be at least 5 characters long.</div>
+      </div>
+      <strong>
+         <p id="msg">{{ message }}</p>
+      </strong>
+      <button [disabled]="!regForm.form.valid" type="submit" class="btn btn-success" style="margin-left: 200px">LOGIN</button>
+      <hr />
+   </div>
+</form>

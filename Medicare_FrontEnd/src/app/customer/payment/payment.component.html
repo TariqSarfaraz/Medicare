@@ -1,0 +1,67 @@
+<br />
+<br />
+<div class="container">
+   <button (click)="backtodashboard()" class="btn btn-primary" id="one">&lAarr;</button>
+   <button (click)="gotohome()" class="btn btn-danger" id="one" style="margin-left: 90%">LOGOUT</button>
+   <br />
+   <br />
+   <form>
+      <table class="table table-striped table-bordered">
+         <thead>
+            <tr>
+               <th>PRODUCT ID</th>
+               <th>PRODUCT NAME</th>
+               <th>PRODUCT PRICE</th>
+               <th>PRODUCT TYPE</th>
+            </tr>
+         </thead>
+
+         <tbody>
+            <tr *ngFor="let br of ProductList">
+               <td>{{ br.pid }}</td>
+               <td>{{ br.pname }}</td>
+               <td>{{ br.price | currency: 'INR' }}</td>
+               <td>{{ br.ptype }}</td>
+            </tr>
+         </tbody>
+         <br />
+      </table>
+   </form>
+
+   <div class="makeinline">
+      <p class="sum" style="text-align: center">TOTAL PRICE : {{ sumList }}Rs</p>
+
+      <h2 style="text-align: center">PAYMENT MADE SEEMLESS</h2>
+
+      <div class="paylogo" style="margin-left: 200px">
+         <img style="width: 95px; height: 50px" class="mZ79e pe-lazy" alt="Google Pay" src="https://assets.pharmeasy.in/web-assets/dist/af0c6812.svg" loading="lazy" importance="low" />
+
+         <img style="width: 95px; height: 50px" class="mZ79e pe-lazy" alt="Paytm" src="https://assets.pharmeasy.in/web-assets/dist/0e010044.svg" loading="lazy" importance="low" />
+
+         <img class="mZ79e pe-lazy" alt="Amazon Pay" src="https://assets.pharmeasy.in/web-assets/dist/1066bb1f.svg" loading="lazy" importance="low" />
+
+         <img class="mZ79e pe-lazy" alt="PhonePe" src="https://assets.pharmeasy.in/web-assets/dist/3a1a533d.svg" loading="lazy" importance="low" />
+
+         <img class="mZ79e pe-lazy" alt="Mobikwik" src="https://assets.pharmeasy.in/web-assets/dist/fbea1701.svg" loading="lazy" importance="low" />
+
+         <img class="mZ79e pe-lazy" alt="Airtel Money" src="https://assets.pharmeasy.in/web-assets/dist/4733a49d.svg" loading="lazy" importance="low" />
+
+         <img class="mZ79e pe-lazy" alt="Ola Money" src="https://assets.pharmeasy.in/web-assets/dist/b278e536.svg" loading="lazy" importance="low" />
+
+         <img style="width: 80px; height: 50px" class="mZ79e pe-lazy" alt="Maestro" src="https://assets.pharmeasy.in/web-assets/dist/0aca2077.svg" loading="lazy" importance="low" />
+
+         <img style="width: 80px; height: 50px" class="mZ79e pe-lazy" alt="Mastercard" src="https://assets.pharmeasy.in/web-assets/dist/44a51ca5.svg" loading="lazy" importance="low" />
+
+         <img style="width: 95px; height: 50px" class="mZ79e pe-lazy" alt="Visa" src="https://assets.pharmeasy.in/web-assets/dist/d058b00d.svg" loading="lazy" importance="low" />
+
+         <img style="width: 100px; height: 50px" class="mZ79e pe-lazy" alt="Rupay" src="https://assets.pharmeasy.in/web-assets/dist/e9445364.svg" loading="lazy" importance="low" />
+
+         <img class="mZ79e pe-lazy" alt="Diners" src="https://assets.pharmeasy.in/web-assets/dist/6e09c713.svg" loading="lazy" importance="low" />
+      </div>
+
+      <br />
+      <button (click)="backtoproducts()" id="middle" class="btn btn-danger" style="margin-right: 20px">CANCEL PAYMENT</button>
+
+      <button class="btn btn-success" (click)="paymentsuccess(Product)" style="margin-left: 20px">CONFIRM PAYMENT</button>
+   </div>
+</div>

@@ -1,0 +1,41 @@
+
+video{
+    width: 100%;
+    height: 100%;
+}
+div.relative {
+    position: relative;
+    
+    
+  }
+  
+  div.absolute {
+    position: absolute;
+    top: 80px;
+    right: 0; 
+    width: 500px;
+    height: 700px;
+    background-color: rgba(253, 255, 250, 0.404);
+    border-radius: 20px;
+    padding-bottom: 20px;
+    margin-right: 20px;
+  }
+  div.absolute button{
+      margin-left: 80px;
+  }
+
+  div.absolute p{
+    margin-left: 150px;
+    
+}
+  div.absolute2 {
+    position: absolute;
+    top: 80px;
+    left: 40px; 
+    width: 750px;
+    text-align: center;
+    /* border: 3px solid #73AD21; */
+    font-size: xx-large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgba(14, 9, 6, 0.753);
+  }

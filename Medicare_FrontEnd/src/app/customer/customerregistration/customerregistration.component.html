@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+
+   <body style="background-image: url('https://images.pexels.com/photos/1260727/pexels-photo-1260727.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')">
+      <form #regForm="ngForm">
+         <div class="container">
+            <h1 class="fs-1 fw-bold">CUSTOMER REGISTRATION</h1>
+            <hr />
+            <label for="email"><b>NAME</b></label>
+            <input #name="ngModel" type="text" placeholder="Enter Name" name="name" #un="ngModel" required [(ngModel)]="car.name" />
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+               <div *ngIf="name.errors?.['required']">Name is required.</div>
+            </div>
+
+            <br />
+
+            <label for="psw"><b>PASSWORD</b></label>
+            <input #password="ngModel" type="password" placeholder="Enter Password" name="password" #up="ngModel" required [(ngModel)]="car.password" minlength="5" />
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert">
+               <div *ngIf="password.errors?.['required']">Password is required.</div>
+               <div *ngIf="password.errors?.['minlength']">Password must be at least 5 characters long.</div>
+            </div>
+
+            <label for="psw"><b>MOBILE NO</b></label>
+            <input #number="ngModel" type="text" placeholder="Enter Mobile number" name="moob" #um="ngModel" minlength="10" maxlength="10" required [(ngModel)]="car.contact" />
+            <div *ngIf="number.invalid && (number.dirty || number.touched)" class="alert">
+               <div *ngIf="number.errors?.['required']">Number is required.</div>
+               <div *ngIf="password.errors?.['minlength']">Number must be 10 only</div>
+            </div>
+
+            <label for="add"><b>ADDRESS</b></label>
+            <input #address="ngModel" type="text" placeholder="Enter your Address" name="add" [(ngModel)]="car.address" />
+            <div *ngIf="address.invalid && (address.dirty || address.touched)" class="alert">
+               <div *ngIf="address.errors?.['required']">Address is required.</div>
+            </div>
+            <hr />
+
+            <button style="margin-left: 45%" [disabled]="!regForm.form.valid" type="submit" class="btn btn-success" [routerLink]="['/home']" (click)="register()">REGISTER</button>
+            <br />
+            <br />
+            <div class="container signin">
+               <p>Already have an account? <a href="#" [routerLink]="['/home']">Sign in</a>.</p>
+            </div>
+         </div>
+      </form>
+   </body>
+</html>

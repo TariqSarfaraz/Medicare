@@ -1,0 +1,100 @@
+<br />
+<br />
+<button (click)="adminhome()" class="btn btn-primary" id="one">BACK</button>
+<button (click)="gotohome()" class="btn btn-danger" style="margin-left: 90%">LOG OUT</button>
+<br />
+<br />
+<div class="container fs-5">
+   <form #myForm="ngForm">
+      <div class="form-group">
+         <label for="pname">PRODUCT NAME</label>
+         <input #name="ngModel" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter name" name="name" id="name" required [(ngModel)]="Product.pname" maxlength="20" />
+         <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+            <div *ngIf="name.errors?.['required']">ID is required.</div>
+            <div *ngIf="name.errors?.['minlength']">ID must be at least 3 characters long.</div>
+         </div>
+      </div>
+
+      <br />
+
+      <div class="form-group">
+         <label for="pname">PRODUCT PRICE</label>
+         <input
+            #price="ngModel"
+            type="number"
+            class="form-control"
+            aria-describedby="emailHelp"
+            placeholder="Enter Price"
+            name="name"
+            id="name"
+            required
+            [(ngModel)]="Product.price"
+            min="0"
+            max="50"
+         />
+      </div>
+      <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert">
+         <div *ngIf="price.errors?.['required']">Price is required.</div>
+         <div *ngIf="price.errors?.['minlength']">Price must be at least 1 characters long.</div>
+      </div>
+
+      <br />
+
+      <div class="form-group">
+         <label for="pname">PRODUCT QUANTITY</label>
+         <input
+            #qty="ngModel"
+            type="number"
+            class="form-control"
+            aria-describedby="emailHelp"
+            placeholder="Enter Quantity"
+            name="name"
+            id="name"
+            required
+            [(ngModel)]="Product.pqty"
+            min="0"
+            max="50"
+         />
+      </div>
+      <div *ngIf="qty.invalid && (qty.dirty || qty.touched)" class="alert">
+         <div *ngIf="qty.errors?.['required']">Quantity is required.</div>
+         <div *ngIf="qty.errors?.['minlength']">Quantity must be at least 3 characters long.</div>
+      </div>
+
+      <br />
+
+      <div class="form-group">
+         <label #type="ngModel" for="pname" [(ngModel)]="Product.ptype">PRODUCT TYPE</label> <br />
+         <select name="cars" id="cars" [(ngModel)]="Product.ptype">
+            <option value="Antibiotic">Antibiotic</option>
+            <option value="Syrup">Syrup</option>
+            <option value="Insulin">shots</option>
+         </select>
+      </div>
+      <div *ngIf="type.invalid && (type.dirty || type.touched)" class="alert">
+         <div *ngIf="type.errors?.['required']">type type is required.</div>
+         <div *ngIf="type.errors?.['minlength']">type must be at least 3 characters long.</div>
+      </div>
+      <br />
+
+      <div class="form-group">
+         <label #status="ngModel" for="pname" [(ngModel)]="Product.status">PRODUCT STATUS</label>
+         <br />
+         <select name="prd" id="prd" [(ngModel)]="Product.status" #status="ngModel">
+            <option value="A">A</option>
+            <option value="N">N</option>
+         </select>
+         <br />
+         <small id="Help" class="form-text text-muted">A-Available N-Non-Available</small>
+      </div>
+      <div *ngIf="status.invalid && (status.dirty || status.touched)" class="alert">
+         <div *ngIf="status.errors?.['required']">status is required.</div>
+         <div *ngIf="status.errors?.['minlength']">status must be at least 3 characters long.</div>
+      </div>
+      <br />
+
+      <button type="submit" class="btn btn-success" (click)="onclick()" [disabled]="!myForm.form.valid">SUBMIT</button>
+      <button (click)="adminhome()" class="btn btn-warning" id="one" style="margin-left: 20px">CANCEL</button>
+   </form>
+   <!-- Content here -->
+</div>

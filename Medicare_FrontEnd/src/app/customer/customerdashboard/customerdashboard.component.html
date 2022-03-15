@@ -1,0 +1,39 @@
+<p><br /></p>
+<p class="fs-1 fw-bold">WELCOME {{ name | uppercase }} <br /></p>
+<div>
+   <button (click)="mycart()" class="btn btn-primary btn-lg" id="two">MY CART</button>
+   <button (click)="updateprofile()" class="btn btn-primary btn-lg" id="two">UPDATE PROFILE</button>
+   <button (click)="onclick()" class="btn btn-primary btn-lg" id="two">VIEW PRODUCTS</button>
+
+   <button (click)="search()" class="btn btn-primary btn-lg" id="two">SEARCH</button>
+
+   <button (click)="CategoryComponent()" class="btn btn-primary btn-lg" id="two">PRODUCT BY CATERGORY</button>
+
+   <button (click)="gotohome()" class="btn btn-danger btn-lg" id="one">LOGOUT</button>
+</div>
+<br /><br />
+<p *ngIf="ProductList.length === 0" class="">-- EMPTY --</p>
+<form *ngIf="ProductList.length > 0">
+   <p>{{ name | uppercase }} YOUR BOOKED PRODUCTS</p>
+   <table class="table table-striped table-bordered">
+      <thead>
+         <tr>
+            <th>CART ID</th>
+            <th>PRODUCT ID</th>
+            <th>PRODUCT NAME</th>
+            <th>PRODUCT PRICE</th>
+            <th>PRODUCT TYPE</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor="let br of ProductList">
+            <td>{{ br.id }}</td>
+            <td>{{ br.pid }}</td>
+            <td>{{ br.pname }}</td>
+            <td>{{ br.price | currency: 'INR' }}</td>
+            <td>{{ br.ptype }}</td>
+         </tr>
+      </tbody>
+      <br />
+   </table>
+</form>
